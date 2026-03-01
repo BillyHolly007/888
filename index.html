@@ -4,31 +4,25 @@
     <meta charset="UTF-8">
     <title>My Website View</title>
     <style>
-        body { margin: 0; padding: 0; overflow: hidden; }
-        /* This makes the "Kill Line" or window full screen */
-        iframe {
-            width: 100vw;
-            height: 100vh;
-            border: none;
-        }
-
-<!-- Replace 'Kill Line.pdf' with the actual path to your file in the repo -->
-<object data="Kill Line.pdf" type="application/pdf" width="100%" height="600px">
-    <p>It appears you don't have a PDF plugin for this browser.
-    No biggie... you can <a href="Kill Line.pdf">click here to download the PDF file.</a></p>
-</object>
-
-
-
-
-
-
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        .pdf-container { width: 100%; height: 80vh; border: none; }
+        iframe.web-view { width: 100%; height: 50vh; border: none; }
     </style>
 </head>
 <body>
 
-    <!-- Replace the URL with your actual website -->
-    <iframe src="https://www.yourwebsite.com"></iframe>
+    <!-- 1. The Website View -->
+    <iframe class="web-view" src="https://www.example.com"></iframe>
+
+    <hr>
+
+    <!-- 2. The PDF View (Now correctly in the body) -->
+    <!-- Note: Use %20 for spaces if you don't rename the file -->
+    <object data="Kill%20Line.pdf" type="application/pdf" class="pdf-container">
+        <p>Your browser doesn't support PDF embedding. 
+           <a href="Kill%20Line.pdf">Click here to download the PDF.</a>
+        </p>
+    </object>
 
 </body>
 </html>
